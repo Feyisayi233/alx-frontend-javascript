@@ -1,3 +1,13 @@
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+  return `${firstName[0]}. ${lastName}`;
+};
+
+// Example usage
+console.log(printTeacher("John", "Doe")); // J. Doe
 interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
@@ -23,7 +33,7 @@ interface Director extends Teacher {
   numberOfReports: number;
 }
 
-const director1: Directors = {
+const director1: Director = {
   firstName: "John",
   lastName: "Doe",
   location: "London",
@@ -34,19 +44,6 @@ const director1: Directors = {
 console.log(director1);
 
 // Interface for printTeacher function
-
-function printTeacher({
-  firstName,
-  lastName,
-}: {
-  firstName: string;
-  lastName: string;
-}): string {
-  return `${firstName[0]}. ${lastName}`;
-}
-
-// Example usage
-console.log(printTeacher({ firstName: "John", lastName: "Doe" })); // J. Doe
 
 // Interface for StudentClass constructor
 interface StudentClassConstructor {
